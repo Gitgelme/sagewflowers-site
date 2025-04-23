@@ -3,7 +3,9 @@ Disallow: /privacy-policy/
 Disallow: /contact/
 Disallow: /about-us/
 Disallow: /faq/
-Disallow: /smudge-sticks/
+Disallow: /smudge-sticks
+Disallow: /wp-sitemap.xml
+Disallow: /sitemap.website.xml
 
 Allow: /
 
