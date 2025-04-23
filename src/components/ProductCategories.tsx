@@ -34,23 +34,23 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, imageUrl, description 
 const ProductCategories: React.FC = () => {
   const products = [
     {
-      title: "Sage Smudge Sticks",
-      imageUrl: "https://images.pexels.com/photos/6602365/pexels-photo-6602365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      title: "White Sage Smudge Sticks",
+      imageUrl: "/white-sage-smudge-stick.jpg",
       description: "Premium white sage bundles for purification and cleansing, available in various sizes."
     },
     {
       title: "Lavender Smudge Sticks",
-      imageUrl: "https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      imageUrl: "/lavender-smudge-stick.jpg",
       description: "Calming lavender bundles with aromatherapeutic properties, perfect for relaxation rituals."
     },
     {
       title: "Rosemary Smudge Sticks",
-      imageUrl: "https://images.pexels.com/photos/7176996/pexels-photo-7176996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      imageUrl: "/rosemary-smudge-stick.jpg",
       description: "Purifying rosemary bundles for mental clarity and enhanced focus during meditation."
     },
     {
       title: "Palo Santo Sticks",
-      imageUrl: "https://images.pexels.com/photos/13942967/pexels-photo-13942967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      imageUrl: "/palo-santo-wood-stick.jpg",
       description: "Ethically harvested Palo Santo wood for spiritual cleansing and energy balancing."
     }
   ];

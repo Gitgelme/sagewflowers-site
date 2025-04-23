@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
       id="home" 
       className="pt-16 md:pt-20 min-h-screen flex items-center justify-center bg-cover bg-center relative"
       style={{ 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/6690828/pexels-photo-6690828.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")',
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/smudge-sticks-banner.jpg")',
       }}
     >
       <div className="container text-center">
