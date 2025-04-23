@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-3 font-medium rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-sage text-charcoal hover:bg-sage/90 focus:ring-sage;
+  }
+
+  .btn-secondary {
+    @apply bg-charcoal text-white hover:bg-charcoal/90 focus:ring-charcoal;
+  }
+
+  .nav-link {
+    @apply uppercase tracking-wider text-gray hover:text-sage relative font-medium text-sm transition-colors duration-200;
+  }
+
+  .nav-link:after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-sage transition-all duration-200;
+  }
+
+  .nav-link:hover:after {
+    @apply w-full;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  }
+
+  .card-hover {
+    @apply hover:scale-105 hover:border-sage hover:border;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-semibold mb-6 md:mb-10 text-center;
+  }
+
+  .accordion-button {
+    @apply flex justify-between items-center w-full p-5 font-medium text-left bg-white rounded-t-lg border border-neutral-200 hover:bg-neutral-100 focus:outline-none;
+  }
+
+  .accordion-panel {
+    @apply p-5 border border-t-0 border-neutral-200 rounded-b-lg bg-white;
+  }
+}
