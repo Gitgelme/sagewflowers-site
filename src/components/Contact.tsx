@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Email</h4>
                     <p className="mt-1 text-neutral-600">
-                      wholesale@pureelements.com
+                    Please use the Contact Form
                     </p>
                   </div>
                 </div>

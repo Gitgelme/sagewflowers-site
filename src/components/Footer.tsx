@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               Premium wholesale supplier of ethically sourced smudge sticks and Palo Santo for retailers, spas, and wellness centers.
             </p>
             <p className="text-sm opacity-75">
-              © {currentYear} Pure Elements. All rights reserved.
+              © {currentYear} Soul & Soap Co. All rights reserved.
             </p>
           </div>
           

@@ -29,7 +29,7 @@ const WhyChooseUs: React.FC = () => {
           <Feature
             icon={<Star size={24} />}
             title="Direct Producer"
-            description="Work directly with producers, ensuring authentic products at the best wholesale prices without intermediaries."
+            description="We produce our smudge sticks in-house and source Palo Santo from trusted partners, ensuring consistent quality and fair wholesale pricing — no middlemen involved."
           />
           
           <Feature

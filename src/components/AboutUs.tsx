@@ -10,22 +10,22 @@ const AboutUs: React.FC = () => {
           <div className="bg-white p-8 rounded-lg shadow-md">
             <div className="prose max-w-none">
               <p className="mb-4 text-lg">
-                At Soul & Soap Co, we are dedicated to providing premium quality smudge sticks and Palo Santo products to retailers, spas, and wellness centers worldwide. Our journey began over a decade ago with a passion for natural healing traditions and sustainable harvesting practices.
+                At Soul & Soap Co., we specialize in premium-quality smudge sticks and Palo Santo sticks, crafted for retailers, spas, and wellness centers worldwide. Our journey began with a passion for ancient cleansing rituals and sustainably harvested botanicals.
               </p>
               
               <h3 className="text-xl font-semibold mb-3 mt-6">Our Story</h3>
               <p className="mb-4">
-                Founded in 2012, our company has grown from a small family operation to a trusted wholesale supplier of ceremonial herbs and cleansing tools. We work directly with indigenous communities and ethical farmers to ensure our products are harvested with respect for nature and ancient traditions.
+                Founded in 2016, our company has grown from a small family operation into a trusted wholesale supplier of ceremonial herbs. We offer a wide variety of natural products including sage smudge sticks, lavender smudge sticks, rosemary smudge sticks, cedar, and eucalyptus smudge sticks — each harvested with care and tradition. We partner with indigenous communities and ethical farms to ensure every bundle honors the earth and its ancestral wisdom.
               </p>
               
               <h3 className="text-xl font-semibold mb-3 mt-6">Our Commitment to Sustainability</h3>
               <p className="mb-4">
-                We believe in responsible sourcing and environmental stewardship. All our sage and herbs are either ethically wildcrafted or grown organically, while our Palo Santo comes only from naturally fallen branches, following strict sustainability guidelines to protect this sacred tree.
+                We believe in conscious sourcing and environmental care. All of our herbs are wildcrafted or organically grown. Our Palo Santo is sourced exclusively from naturally fallen wood, in strict accordance with sustainability guidelines that protect this sacred resource.
               </p>
               
               <h3 className="text-xl font-semibold mb-3 mt-6">Quality Assurance</h3>
               <p className="mb-4">
-                Every product undergoes rigorous quality control before packaging. We take pride in providing consistently excellent products that your customers will love and trust, batch after batch.
+                Every batch is inspected for quality and freshness before packaging. We proudly serve businesses looking for bulk smudge sticks, private label options, and reliable, consistent quality that customers love and trust.
               </p>
               
               <div className="flex justify-center mt-8">
