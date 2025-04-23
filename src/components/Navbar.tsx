@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
         <a href="#" className="text-white font-semibold text-xl">
-          Pure Elements
+        Soul & Soap Co
         </a>
 
         {/* Desktop Menu */}

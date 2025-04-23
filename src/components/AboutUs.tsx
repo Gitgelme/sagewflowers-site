@@ -10,7 +10,7 @@ const AboutUs: React.FC = () => {
           <div className="bg-white p-8 rounded-lg shadow-md">
             <div className="prose max-w-none">
               <p className="mb-4 text-lg">
-                At Pure Elements, we are dedicated to providing premium quality smudge sticks and Palo Santo products to retailers, spas, and wellness centers worldwide. Our journey began over a decade ago with a passion for natural healing traditions and sustainable harvesting practices.
+                At Soul & Soap Co, we are dedicated to providing premium quality smudge sticks and Palo Santo products to retailers, spas, and wellness centers worldwide. Our journey began over a decade ago with a passion for natural healing traditions and sustainable harvesting practices.
               </p>
               
               <h3 className="text-xl font-semibold mb-3 mt-6">Our Story</h3>

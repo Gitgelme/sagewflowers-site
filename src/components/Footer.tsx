@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Pure Elements</h3>
+            <h3 className="text-xl font-semibold mb-4">Soul & Soap Co</h3>
             <p className="mb-4 max-w-md">
               Premium wholesale supplier of ethically sourced smudge sticks and Palo Santo for retailers, spas, and wellness centers.
             </p>
