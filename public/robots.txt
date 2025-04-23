@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /privacy-policy/
+Disallow: /contact/
+Disallow: /about-us/
+Disallow: /faq/
+Disallow: /smudge-sticks/
+
+Allow: /
+
+Sitemap: https://www.sagewflowers.com/sitemap.xml
