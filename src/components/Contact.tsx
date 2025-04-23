@@ -19,31 +19,16 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, isChecked: e.target.checked }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form data submitted:', formData);
-    // Here you would normally send the data to your server or a service
-    alert('Thank you for your message. We will get back to you soon!');
-    setFormData({
-      name: '',
-      company: '',
-      email: '',
-      message: '',
-      isChecked: false
-    });
-  };
-
   return (
     <section id="contact" className="section bg-neutral-100">
       <div className="container">
         <h2 className="section-title">Contact Us</h2>
-        
+
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div>
             <div className="bg-white p-8 rounded-lg shadow-md h-full">
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
-              
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
@@ -58,7 +43,7 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <Phone className="h-6 w-6 text-sage" />
@@ -70,7 +55,7 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <Mail className="h-6 w-6 text-sage" />
@@ -78,12 +63,12 @@ const Contact: React.FC = () => {
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Email</h4>
                     <p className="mt-1 text-neutral-600">
-                    Please use the Contact Form
+                      Please use the Contact Form
                     </p>
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-8">
                 <h4 className="text-lg font-medium mb-3">Business Hours</h4>
                 <p className="text-neutral-600">
@@ -93,13 +78,13 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Contact Form */}
           <div>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
-              
-              <form onSubmit={handleSubmit}>
+
+              <form action="/send-email.php" method="POST" className="space-y-4">
                 <div className="mb-4">
                   <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1">
                     Your Name*
@@ -114,7 +99,7 @@ const Contact: React.FC = () => {
                     className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sage focus:border-transparent"
                   />
                 </div>
-                
+
                 <div className="mb-4">
                   <label htmlFor="company" className="block text-sm font-medium text-neutral-700 mb-1">
                     Company/Organization*
@@ -129,7 +114,7 @@ const Contact: React.FC = () => {
                     className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sage focus:border-transparent"
                   />
                 </div>
-                
+
                 <div className="mb-4">
                   <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-1">
                     Email Address*
@@ -144,7 +129,7 @@ const Contact: React.FC = () => {
                     className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sage focus:border-transparent"
                   />
                 </div>
-                
+
                 <div className="mb-4">
                   <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-1">
                     Message*
@@ -159,7 +144,7 @@ const Contact: React.FC = () => {
                     className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sage focus:border-transparent resize-none"
                   ></textarea>
                 </div>
-                
+
                 <div className="mb-6">
                   <div className="flex items-start">
                     <input
@@ -176,7 +161,7 @@ const Contact: React.FC = () => {
                     </label>
                   </div>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full btn btn-primary flex items-center justify-center"
