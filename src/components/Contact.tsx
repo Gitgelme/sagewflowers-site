@@ -10,43 +10,48 @@ const Contact: React.FC = () => {
     isChecked: false,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({ ...prev, isChecked: e.target.checked }));
+    setFormData((prev) => ({ ...prev, isChecked: e.target.checked }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://form.sagewflowers.com/send-email.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          name: formData.name,
-          company: formData.company,
-          email: formData.email,
-          message: formData.message,
-        }),
-      });
+      const response = await fetch(
+        'https://form.sagewflowers.com/send-email.php',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams({
+            name: formData.name,
+            company: formData.company,
+            email: formData.email,
+            message: formData.message,
+          }),
+        }
+      );
 
       const text = await response.text();
 
-      if (response.ok && text.toLowerCase().includes("success")) {
-        alert("Your message was sent successfully!");
+      if (response.ok && text.toLowerCase().includes('success')) {
+        alert('Your message was sent successfully!');
       } else {
-        console.error("Server response:", text);
-        alert("An error occurred while sending your message.");
+        console.error('Server response:', text);
+        alert('An error occurred while sending your message.');
       }
     } catch (error) {
-      console.error("Unexpected error:", error);
-      alert("An unexpected error occurred.");
+      console.error('Unexpected error:', error);
+      alert('An unexpected error occurred.');
     }
 
     setFormData({
@@ -64,6 +69,7 @@ const Contact: React.FC = () => {
         <h2 className="section-title">Contact Us</h2>
 
         <div className="grid md:grid-cols-2 gap-12">
+          {/* Left info panel */}
           <div>
             <div className="bg-white p-8 rounded-lg shadow-md h-full">
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
@@ -117,13 +123,18 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
+          {/* Right form panel */}
           <div>
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
-
+              <h3 className="text-2xl font-semibold mb-6">
+                Send Us a Message
+              </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="mb-4">
-                  <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-neutral-700 mb-1"
+                  >
                     Your Name*
                   </label>
                   <input
@@ -138,7 +149,10 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="company" className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-medium text-neutral-700 mb-1"
+                  >
                     Company/Organization*
                   </label>
                   <input
@@ -153,7 +167,10 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-neutral-700 mb-1"
+                  >
                     Email Address*
                   </label>
                   <input
@@ -168,7 +185,10 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-neutral-700 mb-1"
+                  >
                     Message*
                   </label>
                   <textarea
@@ -179,7 +199,7 @@ const Contact: React.FC = () => {
                     required
                     rows={4}
                     className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sage focus:border-transparent resize-none"
-                  ></textarea>
+                  />
                 </div>
 
                 <div className="mb-6">
@@ -193,18 +213,22 @@ const Contact: React.FC = () => {
                       required
                       className="mt-1 h-4 w-4 text-sage focus:ring-sage border-neutral-300 rounded"
                     />
-                    <label htmlFor="privacy" className="ml-2 block text-sm text-neutral-600">
-                      I agree to the processing of my data according to the privacy policy.
+                    <label
+                      htmlFor="privacy"
+                      className="ml-2 block text-sm text-neutral-600"
+                    >
+                      I agree to the processing of my data according to the privacy
+                      policy.
                     </label>
                   </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full btn btn-primary flex items-center justify-center"
+                  className="inline-flex items-center px-6 py-2 bg-sage text-white rounded-md hover:bg-sage-dark"
                 >
+                  <Send className="mr-2 h-5 w-5" />
                   Send Message
-                  <Send className="ml-2 h-4 w-4" />
                 </button>
               </form>
             </div>
