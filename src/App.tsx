@@ -12,7 +12,7 @@ function App() {
             content="Trusted B2B supplier of bulk sage bundles, palo santo sticks, white sage, and more. Export-ready for USA, UK, Germany and beyond."
           />
           <link rel="canonical" href="https://www.sagewflowers.com/" />
-          <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+          <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
         </Helmet>
 
         <main>
