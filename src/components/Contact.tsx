@@ -183,18 +183,36 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="mb-6">
-  <div className="flex items-start">
-    <input
-      type="checkbox"
-      id="privacy"
-      name="privacy"
-      checked={formData.isChecked}
-      onChange={handleCheckbox}
-      required
-      className="mt-1 h-4 w-4 text-sage focus:ring-sage border-neutral-300 rounded"
-    />
-    <label htmlFor="privacy" className="ml-2 block text-sm text-neutral-600">
-      I agree to the processing of my data according to the privacy policy.
-    </label>
-  </div>
-</div>
+                  <div className="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="privacy"
+                      name="privacy"
+                      checked={formData.isChecked}
+                      onChange={handleCheckbox}
+                      required
+                      className="mt-1 h-4 w-4 text-sage focus:ring-sage border-neutral-300 rounded"
+                    />
+                    <label htmlFor="privacy" className="ml-2 block text-sm text-neutral-600">
+                      I agree to the processing of my data according to the privacy policy.
+                    </label>
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full btn btn-primary flex items-center justify-center"
+                >
+                  Send Message
+                  <Send className="ml-2 h-4 w-4" />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
