@@ -23,24 +23,21 @@ const Contact: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://form.sagewflowers.com/send-email.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          name: formData.name,
-          company: formData.company,
-          email: formData.email,
-          message: formData.message,
-        }).toString(),
+      const formElement = e.target as HTMLFormElement;
+      const response = await fetch('https://form.sagewflowers.com/send-email.php', {
+        method: 'POST',
+        body: new FormData(formElement),
       });
 
-      const result = await response.text();
-      alert(result);
+      const text = await response.text();
+      if (response.ok && text.includes("successfully")) {
+        alert("Thank you for your message. We will get back to you soon!");
+      } else {
+        alert("An error occurred while sending your message.\n\nDetails: " + text);
+      }
     } catch (error) {
-      console.error("Error sending message:", error);
-      alert("An error occurred while sending your message.");
+      alert("An unexpected error occurred.");
+      console.error(error);
     }
 
     setFormData({
@@ -48,7 +45,7 @@ const Contact: React.FC = () => {
       company: '',
       email: '',
       message: '',
-      isChecked: false
+      isChecked: false,
     });
   };
 
@@ -63,7 +60,9 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-sage" />
+                  <div className="flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-sage" />
+                  </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Office Location</h4>
                     <p className="mt-1 text-neutral-600">
@@ -73,21 +72,32 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
+
                 <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-sage" />
+                  <div className="flex-shrink-0">
+                    <Phone className="h-6 w-6 text-sage" />
+                  </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Phone</h4>
-                    <p className="mt-1 text-neutral-600">+1 (555) 123-4567</p>
+                    <p className="mt-1 text-neutral-600">
+                      +1 (555) 123-4567
+                    </p>
                   </div>
                 </div>
+
                 <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-sage" />
+                  <div className="flex-shrink-0">
+                    <Mail className="h-6 w-6 text-sage" />
+                  </div>
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Email</h4>
-                    <p className="mt-1 text-neutral-600">Please use the Contact Form</p>
+                    <p className="mt-1 text-neutral-600">
+                      Please use the Contact Form
+                    </p>
                   </div>
                 </div>
               </div>
+
               <div className="mt-8">
                 <h4 className="text-lg font-medium mb-3">Business Hours</h4>
                 <p className="text-neutral-600">
