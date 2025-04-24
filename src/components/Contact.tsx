@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
     company: '',
     email: '',
     message: '',
-    isChecked: false
+    isChecked: false,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -23,21 +23,30 @@ const Contact: React.FC = () => {
     e.preventDefault();
 
     try {
-      const formElement = e.target as HTMLFormElement;
-      const response = await fetch('https://form.sagewflowers.com/send-email.php', {
-        method: 'POST',
-        body: new FormData(formElement),
+      const response = await fetch("https://form.sagewflowers.com/send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
 
       const text = await response.text();
-      if (response.ok && text.includes("successfully")) {
-        alert("Thank you for your message. We will get back to you soon!");
+
+      if (response.ok && text.toLowerCase().includes("success")) {
+        alert("Your message was sent successfully!");
       } else {
-        alert("An error occurred while sending your message.\n\nDetails: " + text);
+        console.error("Server response:", text);
+        alert("An error occurred while sending your message.");
       }
     } catch (error) {
+      console.error("Unexpected error:", error);
       alert("An unexpected error occurred.");
-      console.error(error);
     }
 
     setFormData({
@@ -179,31 +188,4 @@ const Contact: React.FC = () => {
                       type="checkbox"
                       id="privacy"
                       name="privacy"
-                      checked={formData.isChecked}
-                      onChange={handleCheckbox}
-                      required
-                      className="mt-1 h-4 w-4 text-sage focus:ring-sage border-neutral-300 rounded"
-                    />
-                    <label htmlFor="privacy" className="ml-2 block text-sm text-neutral-600">
-                      I agree to the processing of my data according to the privacy policy.
-                    </label>
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full btn btn-primary flex items-center justify-center"
-                >
-                  Send Message
-                  <Send className="ml-2 h-4 w-4" />
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Contact;
+                      checked={formData.isChecked}\
