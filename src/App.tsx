@@ -1,27 +1,28 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import WhyChooseUs from './components/WhyChooseUs';
-import ProductCategories from './components/ProductCategories';
-import AboutUs from './components/AboutUs';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { Helmet } from "react-helmet";
+import "./index.css";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <>
+      <Helmet>
+        <title>Wholesale Smudge Sticks & Palo Santo | Sage & Flowers</title>
+        <meta
+          name="description"
+          content="Trusted B2B supplier of bulk sage bundles, palo santo sticks, white sage, and more. Export-ready for USA, UK, Germany and beyond."
+        />
+      </Helmet>
+
       <main>
-        <Hero />
-        <WhyChooseUs />
-        <ProductCategories />
-        <AboutUs />
-        <FAQ />
-        <Contact />
+        <h1>Wholesale Smudge Sticks, Sage Bundles & Palo Santo Exporter</h1>
+        <p>
+          At Sage & Flowers, we specialize in providing high-quality, ethically sourced smudge sticks and sacred woods such as palo santo,
+          white sage, black sage, and lavender bundles. We serve B2B clients including wellness shops, spas, online retailers, and
+          wholesalers around the world. With competitive pricing, low minimum order quantities, and fast international delivery,
+          our products are ideal for businesses looking to offer premium natural incense. Contact us today for bulk inquiries or
+          private label options.
+        </p>
       </main>
-      <Footer />
-    </div>
+    </>
   );
 }
 
