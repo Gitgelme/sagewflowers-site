@@ -188,4 +188,4 @@ const Contact: React.FC = () => {
                       type="checkbox"
                       id="privacy"
                       name="privacy"
-                      checked={formData.isChecked}\
+                      checked={formData.isChecked}
