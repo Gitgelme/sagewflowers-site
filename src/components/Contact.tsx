@@ -19,21 +19,51 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, isChecked: e.target.checked }));
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("https://form.sagewflowers.com/send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          message: formData.message,
+        }).toString(),
+      });
+
+      const result = await response.text();
+      alert(result);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("An error occurred while sending your message.");
+    }
+
+    setFormData({
+      name: '',
+      company: '',
+      email: '',
+      message: '',
+      isChecked: false
+    });
+  };
+
   return (
     <section id="contact" className="section bg-neutral-100">
       <div className="container">
         <h2 className="section-title">Contact Us</h2>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Contact Information */}
           <div>
             <div className="bg-white p-8 rounded-lg shadow-md h-full">
               <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-sage" />
-                  </div>
+                  <MapPin className="h-6 w-6 text-sage" />
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Office Location</h4>
                     <p className="mt-1 text-neutral-600">
@@ -43,32 +73,21 @@ const Contact: React.FC = () => {
                     </p>
                   </div>
                 </div>
-
                 <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <Phone className="h-6 w-6 text-sage" />
-                  </div>
+                  <Phone className="h-6 w-6 text-sage" />
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Phone</h4>
-                    <p className="mt-1 text-neutral-600">
-                      +1 (555) 123-4567
-                    </p>
+                    <p className="mt-1 text-neutral-600">+1 (555) 123-4567</p>
                   </div>
                 </div>
-
                 <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <Mail className="h-6 w-6 text-sage" />
-                  </div>
+                  <Mail className="h-6 w-6 text-sage" />
                   <div className="ml-4">
                     <h4 className="text-lg font-medium">Email</h4>
-                    <p className="mt-1 text-neutral-600">
-                      Please use the Contact Form
-                    </p>
+                    <p className="mt-1 text-neutral-600">Please use the Contact Form</p>
                   </div>
                 </div>
               </div>
-
               <div className="mt-8">
                 <h4 className="text-lg font-medium mb-3">Business Hours</h4>
                 <p className="text-neutral-600">
@@ -79,12 +98,11 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
 
-              <form action="/send-email.php" method="POST" className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="mb-4">
                   <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1">
                     Your Name*
